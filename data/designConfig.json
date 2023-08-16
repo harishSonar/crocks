@@ -1,0 +1,165 @@
+{
+   "view_configuration": {
+      "name": "main",
+      "props": [
+         {
+            "name": "customerID",
+            "type": "string"
+         },
+         {
+            "name": "CustomerInfo",
+            "type": "object"
+         },
+         {
+            "name": "AddressInfo",
+            "type": "object"
+         },
+         {
+            "name": "OrderInfo",
+            "type": "object"
+         },
+         {
+            "name": "Subscriptions",
+            "type": "object"
+         }
+      ],
+      "functions": [
+         "onSubmit"
+      ],
+      "child": [
+         {
+            "name": "CustomerDetails",
+            "props": [
+               {
+                  "name": "CustomerInfo",
+                  "type": "object",
+                  "propsMapping": "CustomerInfo"
+               }
+            ],
+            "state": [
+               {
+                  "name": "showCustomerInfo",
+                  "type": "boolean"
+               }
+            ],
+            "functions": [
+               "onClick",
+               "onBlur"
+            ],
+            "child": [
+               {
+                  "name": "CustomerContactDetails",
+                  "props": [
+                     {
+                        "name": "CustomerPhoneNumber",
+                        "type": "object",
+                        "propsMapping": "CustomerInfo.CustomerContactDetails.phoneNumber"
+                     },
+                     {
+                        "name": "CustomerEmailId",
+                        "type": "string",
+                        "propsMapping": "CustomerInfo.CustomerContactDetails.emailId"
+                     }
+                  ],
+                  "state": [
+                     {
+                        "name": "updateDPhoneNumber",
+                        "type": "string"
+                     }
+                  ],
+                  "functions": [
+                     "onClick",
+                     "onBlur"
+                  ]
+               },
+               {
+                  "name": "CustomerPersonalDetails",
+                  "props": [
+                     {
+                        "name": "Gender",
+                        "type": "string",
+                        "propsMapping": "CustomerInfo.CustomerPersonalDetails.Gender"
+                     },
+                     {
+                        "name": "DOB",
+                        "type": "Date",
+                        "propsMapping": "CustomerInfo.CustomerPersonalDetails.DOB"
+                     }
+                  ],
+                  "state": [
+                     {
+                        "name": "showAddressDetails",
+                        "type": "boolean"
+                     },
+                     {
+                        "name": "custContact",
+                        "type": "number"
+                     }
+                  ],
+                  "functions": [
+                     "onBlur",
+                     "onSubmit"
+                  ]
+               }
+            ]
+         },
+         {
+            "name": "AddressDetails",
+            "props": [
+               {
+                  "name": "AddressInfo",
+                  "type": "object",
+                  "propsMapping": "AddressInfo"
+               }
+            ],
+            "state": [
+               {
+                  "name": "showAddressDetails",
+                  "type": "boolean"
+               },
+               {
+                  "name": "custContact",
+                  "type": "number"
+               }
+            ],
+            "functions": [
+               "onBlur",
+               "onSubmit"
+            ]
+         },
+         {
+            "name": "OrderDetails",
+            "props": [
+               {
+                  "name": "OrderInfo",
+                  "type": "object",
+                  "propsMapping": "OrderInfo"
+               }
+            ],
+            "state": [
+               {
+                  "name": "showOrderInfo",
+                  "type": "boolean"
+               }
+            ]
+         },
+         {
+            "name": "SubscriptionsDetails",
+            "props": [
+               {
+                  "name": "Subscriptions",
+                  "type": "object",
+                  "propsMapping": "Subscriptions"
+               }
+            ],
+            "state": [
+               {
+                  "name": "showSubscriptions",
+                  "type": "boolean"
+               }
+            ]
+         }
+      ]
+   },
+   "widgetName": "CustomerDetails"
+}

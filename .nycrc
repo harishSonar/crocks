@@ -1,0 +1,17 @@
+{
+  "reporter": [
+    "text",
+    "lcov",
+    "html"
+  ],
+  "include": [
+    "src/modules/digitalexp-api-module/*/src/*.js",
+    "src/modules/digitalexp-widget-modules/*/src/*.js"
+  ],
+  "exclude": [
+			"**/node_modules/**"
+	],
+  "sourceMap": false,
+  "instrument": false,
+  "report-dir": "./test-reports/coverage"
+}
